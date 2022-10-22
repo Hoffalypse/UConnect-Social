@@ -43,4 +43,10 @@ const thoughtSchema = new Schema(
     //initialize the thought model 
     const Thought = model('thought', thoughtSchema);
 
+    Thought.create([
+        { thoughtText: 'Wow this is a really great thought', username: 'bill'},
+       
+       
+      ]);
+
 module.exports = Thought;

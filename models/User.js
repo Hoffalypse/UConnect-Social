@@ -3,31 +3,31 @@ const userSchema = new Schema({
     
     username: { 
         type: String, 
-        required: true,
+        required: 'Do you have a Username?',
         unique: true,
         trim: true
-
      },
     email: {
         type: String,
         required: true,
         unique: true,
-        match: Schema.Types.Email
-
+        match: [/.+@.+\..+/]
      },
     
     thoughts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Thought',
-      }
-    ],
+      }],
+
     friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User',
-      }
-    ],
+      }],
+    //   toJSON: {
+    //     virtuals: true
+    // },
   });
   
 userSchema
@@ -38,4 +38,11 @@ userSchema
 
    // Initialize the User model
   const User = model('user', userSchema);
+
+  User.create([
+    { username: 'Hoff', email: 'hoff@gmail.com'},
+    { username: 'CesarDog', email: 'Cdizzle@gmail.com'},
+   
+  ]);
+  
   module.exports = User;
