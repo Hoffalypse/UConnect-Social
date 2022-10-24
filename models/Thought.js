@@ -19,13 +19,14 @@ const reactionSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: timeFormat => moment(timeFormat).format('MMMM Do YYYY, h:mm:ss a'),
-      },
+        get: formatTime => moment(formatTime).format("MMM DD, YYYY [at] hh:mm a"),
+       },
 
   },
   {
     toJSON: {
       virtuals: true,
+      getters: true,
     },
     id: false,
   },
@@ -42,8 +43,8 @@ const thoughtSchema = new Schema(
       createdAt: {
         type: Date,
         default: Date.now,
-        get: timeFormat => moment(timeFormat).format('MMMM Do YYYY, h:mm:ss a')
-      },
+        get: formatTime => moment(formatTime).format("MMM DD, YYYY [at] hh:mm a"),
+       },
       username: {
         type: String,
         required:true,
@@ -54,10 +55,15 @@ const thoughtSchema = new Schema(
     {
         toJSON: {
           virtuals: true,
+          getters: true,
         },
         id: false,
     },
 )
+
+    thoughtSchema.virtual('reactionCount').get(function () {
+        return this.reactions.length
+    })
     //initialize the thought model 
     const Thought = model('thought', thoughtSchema);
 

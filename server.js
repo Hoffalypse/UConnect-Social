@@ -81,7 +81,7 @@ app.get('/api/thoughts', (req, res) => {
 //post a new thought 
 
 app.post ('/api/thoughts',  (req, res) => {
-  Thought.create(req.body)
+  const newThought = Thought.create(req.body)
   .then(({_id}) => {
     return User.findOneAndUpdate(
       { _id: req.body.userId },
@@ -89,13 +89,11 @@ app.post ('/api/thoughts',  (req, res) => {
       { new: true }
     );
   })
-  .then((user) => !user? res.status(404).json({ message: 'Post created, but found no user with that ID' })
-      : res.json('Created the post ')
-  )
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  if (newThought) {
+    res.status(200).json(newThought);
+ } else {
+   res.status(500).json({ message: 'Your post was not added' });
+ }
 })
 
 
