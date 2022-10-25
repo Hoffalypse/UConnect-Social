@@ -24,7 +24,11 @@ As this is a back-end only app use will need an API design platform such as Inso
 Once making a user, friends can be added to the user, thoughts can be added to the user and reactions can be added to each thought. Each can also be updated and deleted. 
 
 
-https://user-images.githubusercontent.com/106857564/190351930-b06cedfa-ea35-4fc5-977b-7a94de72f17b.mp4
+
+
+https://user-images.githubusercontent.com/106857564/197745547-50a3ae50-2c53-41c5-beec-1edb133225ff.mp4
+
+
 
 
 
