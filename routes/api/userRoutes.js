@@ -73,7 +73,7 @@ router.get('/', (req, res) => {
   
   //delete a friend from user
   router.delete('/:_id/friends/:friendId',(req, res) =>{
-    User.findOneAndDelete({ _id: req.params._id },{ friends: req.params.friendId }, (err, result) => {
+    User.findOneAndUpdate({ _id: req.params._id },{$pull:{ friends: req.params.friendId }}, (err, result) => {
       if (result) {
         res.status(200).json({message:'This user has been removed from your friends list'});
      } else {

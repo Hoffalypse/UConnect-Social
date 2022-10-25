@@ -34,6 +34,16 @@ const { User, Thought } = require('../../models');
    }
   })
   
+  //get single thought by ID 
+  router.get('/:_id', (req, res) => {
+    Thought.findOne({ _id: req.params._id }, (err, result) => {
+    if (result) {
+       res.status(200).json(result);
+    } else {
+      res.status(500).json({ message: 'something went wrong' });
+    }
+  });
+  });
   
   //update a thought by _id
   router.put('/:_id', (req, res) => {

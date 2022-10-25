@@ -1,4 +1,4 @@
-# UConnect-Social Media Platform(BackEnd)
+# UConnect Social Media Platform(BackEnd)
 
 This is an app that uses MongoDB to create a backend for a social media platform.
 
@@ -21,7 +21,7 @@ As this is a back-end only app use will need an API design platform such as Inso
 - api/thoughts
 
 <p>
-Once making a user, friends can be added to the user, thoughts can be added to the user and reactions can be added to each thought. 
+Once making a user, friends can be added to the user, thoughts can be added to the user and reactions can be added to each thought. Each can also be updated and deleted. 
 
 
 https://user-images.githubusercontent.com/106857564/190351930-b06cedfa-ea35-4fc5-977b-7a94de72f17b.mp4
@@ -49,6 +49,7 @@ NOTE: Be sure to merge the latest from `main` before making a pull request!
 - JavaScript
 - Node.JS(using Express, Mongoose, and Moment third party modules)
 - Nodemon is also added as a developer dependancy for future development.
+- MongoDB Compass for database navigation
 - The Walkthrough is shown using Insomnia.
 
 ## Questions

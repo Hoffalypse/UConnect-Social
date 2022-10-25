@@ -1,6 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 const moment = require('moment');
 
+// reaction model to be added to the thought model 
 const reactionSchema = new Schema({
     reactionId: { 
         type: Schema.Types.ObjectId,
@@ -32,6 +33,7 @@ const reactionSchema = new Schema({
   },
   );
 
+  //creation of the thought model 
 const thoughtSchema = new Schema(
     {
       thoughtText: {
@@ -61,6 +63,7 @@ const thoughtSchema = new Schema(
     },
 )
 
+     //add function to count and display the reactions per thought 
     thoughtSchema.virtual('reactionCount').get(function () {
         return this.reactions.length
     })
