@@ -31,7 +31,7 @@ https://user-images.githubusercontent.com/106857564/190351930-b06cedfa-ea35-4fc5
 
 Link to video on Google Drive 
 
-https://drive.google.com/file/d/1aCo3wBiAChxPPIqmz65UOzPf_bp0hMjT/view
+https://watch.screencastify.com/v/rvCkfZVuOk7c7ygAU6ee
 
 
 ## Contributing 
